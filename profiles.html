@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profiles | WorkBridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bridge-water"></i>
+                Work<span>Bridge</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="profiles.html" class="active">Freelancers</a>
+                <a href="donations.html">Donation</a>
+                <a href="user-profile.html">My Profile</a>
+                <a href="dashboard.html">Login</a>
+            </div>
+            <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="section" style="background: var(--bg-color); padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <button onclick="history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <h1 class="section-title">Find the Best Talent</h1>
+            <p class="section-subtitle" style="margin-bottom: 2rem;">Hire skilled freelancers and daily workers for your
+                projects.</p>
+
+            <form class="search-form" style="max-width: 600px; margin: 0 auto; display: flex;"
+                onsubmit="event.preventDefault(); searchFreelancers();">
+                <input type="text" id="freelancer-search-title" class="search-input"
+                    placeholder="Search by name, skill, or location (e.g. Plumber, Lahore)"
+                    oninput="searchFreelancers()"
+                    style="flex: 1; border: 1px solid var(--border-color); border-radius: var(--radius-md) 0 0 var(--radius-md);">
+                <button type="submit" class="btn btn-primary"
+                    style="border-radius: 0 var(--radius-md) var(--radius-md) 0;">Search</button>
+            </form>
+
+            <div class="search-tabs" id="freelancer-filters" style="justify-content: center; margin-top: 2rem;">
+                <button class="tab-btn active" onclick="filterFreelancers('all', this)">All Talent</button>
+                <button class="tab-btn" onclick="filterFreelancers('tech', this)">Tech & Design</button>
+                <button class="tab-btn" onclick="filterFreelancers('home', this)">Home Services</button>
+                <button class="tab-btn" onclick="filterFreelancers('writing', this)">Writing & Admin</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Profiles Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="cards-grid">
+                <!-- Profile 1 -->
+                <div class="card freelancer-card" data-freelancer-type="home">
+                    <div class="card-header-flex">
+                        <img src="https://ui-avatars.com/api/?name=Ali+Khan&background=random" alt="Ali Khan"
+                            class="avatar">
+                        <div>
+                            <h3 class="card-title">Ali Khan</h3>
+                            <div class="card-subtitle">Expert Electrician</div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i>
+                                <span>(4.8)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Specializing in
+                            residential wiring, fault finding, and AC installation.</p>
+                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Islamabad, PK</div>
+                    </div>
+                    <div class="card-footer" style="display: flex; gap: 0.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; flex: 1;">
+                            <a href="https://wa.me/923000000000?text=Hi%20Ali%20Khan%2C%20I%20found%20your%20profile%20on%20WorkBridge."
+                                target="_blank" class="btn btn-whatsapp" style="width: 100%; text-decoration: none;"><i
+                                    class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+                            <a href="profile-ali.html" class="btn"
+                                style="width: 100%; border: 1px solid var(--border-color); text-align: center; justify-content: center;">View
+                                Full Profile</a>
+                        </div>
+                        <button class="btn-share"
+                            onclick="shareContent('Ali Khan - Expert Electrician', 'Hire this expert on WorkBridge!', window.location.href)"
+                            title="Share Profile">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile 2 -->
+                <div class="card freelancer-card" data-freelancer-type="tech">
+                    <div class="card-header-flex">
+                        <img src="https://ui-avatars.com/api/?name=Sara+Ahmed&background=random" alt="Sara Ahmed"
+                            class="avatar">
+                        <div>
+                            <h3 class="card-title">Sara Ahmed</h3>
+                            <div class="card-subtitle">Graphic Designer</div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span>(5.0)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Creative
+                            branding, UI/UX, and marketing material designs.</p>
+                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Remote</div>
+                    </div>
+                    <div class="card-footer" style="display: flex; gap: 0.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; flex: 1;">
+                            <a href="https://wa.me/923000000001?text=Hi%20Sara%20Ahmed%2C%20I%20found%20your%20profile%20on%20WorkBridge."
+                                target="_blank" class="btn btn-whatsapp" style="width: 100%; text-decoration: none;"><i
+                                    class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+                            <a href="profile-sara.html" class="btn"
+                                style="width: 100%; border: 1px solid var(--border-color); text-align: center; justify-content: center;">View
+                                Full Profile</a>
+                        </div>
+                        <button class="btn-share"
+                            onclick="shareContent('Sara Ahmed - Graphic Designer', 'Hire this expert on WorkBridge!', window.location.href)"
+                            title="Share Profile">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile 3 -->
+                <div class="card freelancer-card" data-freelancer-type="home">
+                    <div class="card-header-flex">
+                        <img src="https://ui-avatars.com/api/?name=Zaid+Hussain&background=random" alt="Zaid Hussain"
+                            class="avatar">
+                        <div>
+                            <h3 class="card-title">Zaid Hussain</h3>
+                            <div class="card-subtitle">Plumber</div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-regular fa-star"></i>
+                                <span>(4.0)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">Pipe fittings,
+                            geyser installation, and leak repairs.</p>
+                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Karachi, PK</div>
+                    </div>
+                    <div class="card-footer" style="display: flex; gap: 0.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; flex: 1;">
+                            <a href="https://wa.me/923000000002?text=Hi%20Zaid%20Hussain%2C%20I%20found%20your%20profile%20on%20WorkBridge."
+                                target="_blank" class="btn btn-whatsapp" style="width: 100%; text-decoration: none;"><i
+                                    class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+                            <a href="profile-zaid.html" class="btn"
+                                style="width: 100%; border: 1px solid var(--border-color); text-align: center; justify-content: center;">View
+                                Full Profile</a>
+                        </div>
+                        <button class="btn-share"
+                            onclick="shareContent('Zaid Hussain - Plumber', 'Hire this expert on WorkBridge!', window.location.href)"
+                            title="Share Profile">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Profile 4 -->
+                <div class="card freelancer-card" data-freelancer-type="writing">
+                    <div class="card-header-flex">
+                        <img src="https://ui-avatars.com/api/?name=Fatima+Noor&background=random" alt="Fatima Noor"
+                            class="avatar">
+                        <div>
+                            <h3 class="card-title">Fatima Noor</h3>
+                            <div class="card-subtitle">Content Writer</div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i>
+                                <span>(4.7)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">SEO articles,
+                            blog posts, and copy writing in Urdu and English.</p>
+                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Lahore, PK / Remote</div>
+                    </div>
+                    <div class="card-footer" style="display: flex; gap: 0.5rem;">
+                        <div style="display: flex; flex-direction: column; gap: 0.5rem; flex: 1;">
+                            <a href="https://wa.me/923000000003?text=Hi%20Fatima%20Noor%2C%20I%20found%20your%20profile%20on%20WorkBridge."
+                                target="_blank" class="btn btn-whatsapp" style="width: 100%; text-decoration: none;"><i
+                                    class="fa-brands fa-whatsapp"></i> WhatsApp Me</a>
+                            <a href="profile-fatima.html" class="btn"
+                                style="width: 100%; border: 1px solid var(--border-color); text-align: center; justify-content: center;">View
+                                Full Profile</a>
+                        </div>
+                        <button class="btn-share"
+                            onclick="shareContent('Fatima Noor - Content Writer', 'Hire this expert on WorkBridge!', window.location.href)"
+                            title="Share Profile">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <button class="btn" style="border: 1px solid var(--border-color); padding: 0.75rem 2rem;">Load More
+                    Profiles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-social" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                <a href="#" class="social-fb" target="_blank" title="Facebook"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-ig" target="_blank" title="Instagram"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="social-tw" target="_blank" title="Twitter (X)"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-li" target="_blank" title="LinkedIn"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-tk" target="_blank" title="TikTok"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-yt" target="_blank" title="YouTube"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+            <div class="footer-bottom"
+                style="margin-top: 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                &copy; 2026 WorkBridge (KaamLink). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/settings-sync.js"></script>
+
+    <script src="js/events.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

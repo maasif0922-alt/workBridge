@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News | WorkBridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body style="background-color: var(--bg-color);">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bridge-water"></i>
+                Work<span>Bridge</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="profiles.html">Freelancers</a>
+                <a href="news.html" class="active">News</a>
+                <a href="donations.html">Donation</a>
+                <a href="user-profile.html">My Profile</a>
+                <a href="dashboard.html">Login</a>
+            </div>
+            <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <header class="section"
+        style="padding: 4rem 0; text-align: center; background: linear-gradient(-45deg, #f8fafc, #f1f5f9);">
+        <div class="container">
+            <button onclick="history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <h1 class="section-title">Latest News & Blog</h1>
+            <p class="section-subtitle">Read about platform updates, success stories, and industry trends.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <!-- Reuse news-grid from styles.css -->
+            <div class="news-grid" id="news-full-grid">
+                <!-- News items loaded dynamically via js/news-system.js -->
+                <div style="text-align: center; grid-column: 1/-1; padding: 3rem;">
+                    <i class="fa-solid fa-circle-notch fa-spin"
+                        style="font-size: 2rem; color: var(--primary-color);"></i>
+                    <p style="margin-top: 1rem; color: var(--text-secondary);">Loading latest news...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-social" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                <a href="#" class="social-fb" target="_blank" title="Facebook"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-ig" target="_blank" title="Instagram"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="social-tw" target="_blank" title="Twitter (X)"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-li" target="_blank" title="LinkedIn"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-tk" target="_blank" title="TikTok"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-yt" target="_blank" title="YouTube"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+            <div class="footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                &copy; 2026 WorkBridge (KaamLink). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/settings-sync.js"></script>
+
+    <script src="js/news-data.js"></script>
+    <script src="js/news-system.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

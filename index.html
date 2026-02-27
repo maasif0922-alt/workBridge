@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorkBridge | Global Talent Marketplace - Jobs & Freelance Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bridge-water"></i>
+                Work<span>Bridge</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="services.html">Services</a>
+                <a href="profiles.html">Freelancers</a>
+                <a href="news.html">News</a>
+                <a href="donations.html?cause=General%20Donation">Donation</a>
+                <a href="user-profile.html">My Profile</a>
+                <a href="dashboard.html">Login</a>
+                <button class="theme-toggle" id="themeToggleBtn" title="Change Theme">
+                    <i class="fa-solid fa-palette"></i>
+                </button>
+            </div>
+            <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Donation Ticker (Top) -->
+    <div class="donation-ticker">
+        <div class="ticker-label">
+            <a href="donations.html?cause=General%20Donation"
+                style="text-decoration: none; color: inherit; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-heart heart-pulse"></i> SUPPORT
+            </a>
+            <div class="ai-badge-ticker" id="ai-donation-status" title="Content managed by AI">
+                <i class="fa-solid fa-robot"></i> AI
+            </div>
+        </div>
+        <div class="ticker-wrapper" id="donation-ticker-wrapper" style="animation-duration: 80s;">
+            <a href="donations.html?cause=General%20Donation" class="ticker-item">
+                <i class="fa-solid fa-mosque"></i> Jannat mein apna ghar banayein - Aaj hi kisi mustahiq mazdoor ki
+                madad karein.
+            </a>
+            <a href="donations.html?cause=General%20Donation" class="ticker-item">
+                <i class="fa-solid fa-hand-holding-dollar"></i> Your $1 donation can solve someone's major life
+                struggle. Give Sadaqah today!
+            </a>
+            <a href="donations.html?cause=General%20Donation" class="ticker-item">
+                <i class="fa-solid fa-children"></i> Apne pyaaro ke naam ka sadaqa dein aur kisi bache ki taleem ka
+                zariya banain.
+            </a>
+            <a href="donations.html?cause=General%20Donation" class="ticker-item">
+                <i class="fa-solid fa-circle-check"></i> 100% Transparent - Har rupaiya zaroorat-mand tak pahuchega.
+                Click to help!
+            </a>
+            <a href="donations.html?cause=General%20Donation" class="ticker-item">
+                <i class="fa-solid fa-moon"></i> Help a worker's family today and earn rewards for Hereafter.
+            </a>
+        </div>
+    </div>
+
+    <!-- News Ticker (Below) -->
+    <div class="news-ticker" style="border-top: 1px solid var(--border-color);">
+        <div class="ticker-label">
+            <span>LATEST</span>
+            <div class="ai-badge-ticker" id="ai-news-status" title="Content managed by AI">
+                <i class="fa-solid fa-robot"></i> AI
+            </div>
+        </div>
+        <div class="ticker-wrapper" id="news-ticker-wrapper" style="animation-duration: 70s;">
+            <a href="news-detail.html" class="ticker-item"><i class="fa-solid fa-briefcase"></i> 5 New Job Openings in
+                Lahore for Data Entry Operators</a>
+            <a href="news-detail.html" class="ticker-item"><i class="fa-solid fa-star"></i> Pro Tip: Complete your
+                profile to get 2x more visibility!</a>
+            <a href="news-detail.html" class="ticker-item"><i class="fa-solid fa-hand-holding-hand"></i> New Service
+                Category: Home Maintenance now available in Islamabad</a>
+            <a href="news-detail.html" class="ticker-item"><i class="fa-solid fa-bell"></i> Join our WorkBridge
+                Community for daily updates and tips</a>
+            <a href="news-detail.html" class="ticker-item"><i class="fa-solid fa-bolt"></i> Fast Hire: Urgent Plumber
+                needed in Karachi - Check Jobs Page</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <!-- Background Slider for Watermark -->
+        <div class="hero-bg-slider" id="bgSlider">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&q=80&w=1920"
+                class="bg-slide active" alt="Office Background">
+            <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=1920"
+                class="bg-slide" alt="Tech Work Background">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=1920"
+                class="bg-slide" alt="Coworking Space">
+        </div>
+
+        <div class="container" style="position: relative; z-index: 5;">
+            <!-- Advertisement Box (Moved to Top) -->
+            <div class="hero-ad-box" id="hero-ad-link" onclick="window.open('#', '_blank')"
+                style="margin-left: 0; margin-right: auto;">
+                <span class="ad-badge">Ad</span>
+                <div class="ad-icon-wrapper">
+                    <i class="fa-solid fa-bullhorn" id="hero-ad-icon"></i>
+                </div>
+                <div class="ad-content">
+                    <h4 id="hero-ad-title">Promote Your Business Here</h4>
+                    <p id="hero-ad-text">Reach thousands of daily visitors with a premium sponsored placement. Click to
+                        learn
+                        more!</p>
+                </div>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1 class="hero-title-compact">Find Global Talent & Jobs</h1>
+                    <p class="hero-subtitle-compact">Connect with exceptional professionals or discover your next career
+                        move instantly.</p>
+
+                    <div class="search-container compact-search-wizard" id="search-wizard">
+                        <div class="wizard-tabs">
+                            <button class="tab-btn active" onclick="switchWizardTab('jobs')">Jobs</button>
+                            <button class="tab-btn" onclick="switchWizardTab('services')">Services</button>
+                        </div>
+
+                        <!-- Step 1: Category -->
+                        <div class="wizard-step active" id="wizard-step-1">
+                            <label><i class="fa-solid fa-briefcase"></i> Select Category</label>
+                            <div class="wizard-input-group">
+                                <select id="home-search-category" class="search-input">
+                                    <option value="">All Categories</option>
+                                    <!-- Options populated by app.js -->
+                                </select>
+                                <button class="btn btn-primary" type="button" onclick="nextWizardStep(2)">Next <i
+                                        class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Location -->
+                        <div class="wizard-step" id="wizard-step-2" style="display: none;">
+                            <label><i class="fa-solid fa-location-dot"></i> Choose Location</label>
+                            <div class="wizard-input-group">
+                                <select id="home-search-country" class="search-input" onchange="updateCities()">
+                                    <option value="pakistan">Pakistan</option>
+                                    <option value="india">India</option>
+                                    <option value="uae">UAE</option>
+                                    <option value="saudi">Saudi Arabia</option>
+                                    <option value="uk">United Kingdom</option>
+                                    <option value="usa">USA</option>
+                                </select>
+                                <select id="home-search-location" class="search-input">
+                                    <option value="">All Cities</option>
+                                </select>
+                            </div>
+                            <div class="wizard-actions">
+                                <button class="btn btn-secondary" type="button" onclick="nextWizardStep(1)"><i
+                                        class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn btn-primary" type="button" onclick="nextWizardStep(3)"
+                                    style="flex: 1;">Next <i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Keywords & Submit -->
+                        <div class="wizard-step" id="wizard-step-3" style="display: none;">
+                            <label><i class="fa-solid fa-magnifying-glass"></i> Keywords (Optional)</label>
+                            <div class="wizard-input-group">
+                                <input type="text" id="home-search-input" class="search-input"
+                                    placeholder="e.g. Electrician, Data Entry...">
+                            </div>
+                            <div class="wizard-actions">
+                                <button class="btn btn-secondary" type="button" onclick="nextWizardStep(2)"><i
+                                        class="fa-solid fa-arrow-left"></i></button>
+                                <button class="btn btn-primary" type="button" onclick="submitWizardSearch()"
+                                    style="flex: 1;"><i class="fa-solid fa-search"></i> Search Now</button>
+                            </div>
+                        </div>
+
+                        <div class="wizard-progress">
+                            <span class="progress-dot active" id="dot-1"></span>
+                            <span class="progress-dot" id="dot-2"></span>
+                            <span class="progress-dot" id="dot-3"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-right-column">
+                    <!-- The Event Widget will load exactly here now -->
+                    <div id="event-widget-container-hero"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Jobs & Sidebar Event Layout -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Latest Job Listings</h2>
+                    <p class="section-subtitle">Find daily work and remote jobs</p>
+                </div>
+                <a href="jobs.html" class="btn-view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="home-main-layout">
+                <!-- Left Content: Latest Jobs -->
+                <div class="main-column">
+
+                    <div class="cards-grid grid-4">
+                        <!-- Job Card 1 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-hard-hat"></i></div>
+                                    <div>
+                                        <h3 class="card-title">Experienced Mason</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Lahore, PK
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-wage"><i class="fa-solid fa-coins"></i> Daily Wage</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 2000 <span>/ day</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 2h ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-whatsapp" style="width: 100%;"><i
+                                        class="fa-brands fa-whatsapp"></i> Contact</button>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 2 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-user-tie"></i></div>
+                                    <div>
+                                        <h3 class="card-title">Virtual Assistant</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Online</div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-remote"><i class="fa-solid fa-house-laptop"></i> Remote</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 35k <span>/ mo</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 5h ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" style="width: 100%;">View Details</button>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 3 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-faucet-drip"></i></div>
+                                    <div>
+                                        <h3 class="card-title">AC Technician</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Karachi, PK
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-wage"><i class="fa-solid fa-coins"></i> Daily Wage</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 1500 <span>/ visit</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 8h ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-whatsapp" style="width: 100%;"><i
+                                        class="fa-brands fa-whatsapp"></i> Contact</button>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 4 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-car"></i></div>
+                                    <div>
+                                        <h3 class="card-title">Personal Driver</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Karachi, PK
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-full"><i class="fa-solid fa-briefcase"></i> Full Time</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 30k <span>/ mo</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 1d ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-whatsapp" style="width: 100%;"><i
+                                        class="fa-brands fa-whatsapp"></i> Contact</button>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 5 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-people-carry-box"></i></div>
+                                    <div>
+                                        <h3 class="card-title">Office Boy / Helper</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Islamabad
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-full"><i class="fa-solid fa-briefcase"></i> Full Time</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 25k <span>/ mo</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 2d ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-whatsapp" style="width: 100%;"><i
+                                        class="fa-brands fa-whatsapp"></i> Contact</button>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 6 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-palette"></i></div>
+                                    <div>
+                                        <h3 class="card-title">Graphic Designer</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Online</div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-part"><i class="fa-solid fa-clock-rotate-left"></i> Part
+                                    Time</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 20k <span>/ mo</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 3d ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-primary" style="width: 100%;">Apply Now</button>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 7 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-bolt"></i></div>
+                                    <div>
+                                        <h3 class="card-title">Expert Electrician</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Rawalpindi
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-wage"><i class="fa-solid fa-coins"></i> Daily Wage</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 1800 <span>/ visit</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 4d ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-whatsapp" style="width: 100%;"><i
+                                        class="fa-brands fa-whatsapp"></i> Contact</button>
+                            </div>
+                        </div>
+
+                        <!-- Job Card 8 -->
+                        <div class="card">
+                            <div class="card-body" style="padding: 1.25rem;">
+                                <div class="job-card-header">
+                                    <div class="job-icon"><i class="fa-solid fa-utensils"></i></div>
+                                    <div>
+                                        <h3 class="card-title">House Cook / Chef</h3>
+                                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Faisalabad
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="badge badge-full"><i class="fa-solid fa-briefcase"></i> Full Time</span>
+                                <div class="card-meta">
+                                    <div class="price">Rs 40k <span>/ mo</span></div>
+                                    <div class="time-ago"><i class="fa-regular fa-clock"></i> 5d ago</div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button class="btn btn-whatsapp" style="width: 100%;"><i
+                                        class="fa-brands fa-whatsapp"></i> Contact</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar: Event Widget -->
+                <div class="sidebar-column">
+                    <div id="event-widget-container"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Freelancers -->
+    <section class="section reveal" style="background-color: var(--bg-color);">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2 class="section-title">Featured Freelancers</h2>
+                    <p class="section-subtitle">Hire top-rated professionals for your tasks</p>
+                </div>
+                <a href="profiles.html" class="btn-view-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <div class="cards-grid grid-4">
+                <!-- Freelancer 1 -->
+                <div class="card">
+                    <div class="card-header-flex">
+                        <img src="https://ui-avatars.com/api/?name=Ali+Khan&background=random" alt="Ali Khan"
+                            class="avatar">
+                        <div>
+                            <h3 class="card-title">Ali Khan</h3>
+                            <div class="card-subtitle">Expert Electrician</div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star-half-stroke"></i>
+                                <span>(4.8 • 120 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">10+ years
+                            experience in domestic and commercial electrical repairs, wiring, and maintenance.</p>
+                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Islamabad, PK</div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn" style="border: 1px solid var(--border-color);">View Profile</a>
+                        <button class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat</button>
+                    </div>
+                </div>
+
+                <!-- Freelancer 2 -->
+                <div class="card">
+                    <div class="card-header-flex">
+                        <img src="https://ui-avatars.com/api/?name=Sara+Ahmed&background=random" alt="Sara Ahmed"
+                            class="avatar">
+                        <div>
+                            <h3 class="card-title">Sara Ahmed</h3>
+                            <div class="card-subtitle">Graphic Designer</div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i>
+                                <span>(5.0 • 85 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">I create
+                            stunning logos, social media posts, and banners. Fast delivery guaranteed.</p>
+                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Remote</div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="profiles.html" class="btn" style="border: 1px solid var(--border-color);">View
+                            Profile</a>
+                        <div style="display: flex; gap: 0.5rem; flex: 1; justify-content: flex-end;">
+                            <button class="btn btn-whatsapp" style="flex: 1;"><i class="fa-brands fa-whatsapp"></i>
+                                Chat</button>
+                            <button class="btn-share"
+                                onclick="shareContent('Sara Ahmed - Graphic Designer', 'Check out this expert freelancer on WorkBridge!', window.location.href)"
+                                title="Share Profile">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Freelancer 3 -->
+                <div class="card">
+                    <div class="card-header-flex">
+                        <img src="https://ui-avatars.com/api/?name=Usman+Tariq&background=random" alt="Usman Tariq"
+                            class="avatar">
+                        <div>
+                            <h3 class="card-title">Usman Tariq</h3>
+                            <div class="card-subtitle">Video Editor</div>
+                            <div class="rating">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                    class="fa-regular fa-star"></i>
+                                <span>(4.2 • 42 reviews)</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">YouTube
+                            video
+                            editing, reels, and short form content creator relying on Premiere Pro.</p>
+                        <div class="card-subtitle"><i class="fa-solid fa-location-dot"></i> Lahore, PK</div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn" style="border: 1px solid var(--border-color);">View Profile</a>
+                        <button class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> Chat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Plans Section -->
+    <section class="section bg-light reveal">
+        <div class="container">
+            <div class="section-header" style="text-align: center; display: block; margin-bottom: 4rem;">
+                <h2 class="section-title">Global Investment Plans</h2>
+                <p class="section-subtitle">Secure your future with our high-return, fixed-duration investment
+                    opportunities.</p>
+            </div>
+
+            <div class="investment-grid">
+                <!-- Plan 1: Starter -->
+                <div class="invest-card">
+                    <div class="invest-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem;">Starter Growth Plan</h3>
+                    <div class="invest-price">$100 <span>/ 6 Months</span></div>
+                    <div class="invest-return">$35 Monthly Return</div>
+                    <ul class="invest-features">
+                        <li><i class="fa-solid fa-check"></i> Total Payout: $210</li>
+                        <li><i class="fa-solid fa-check"></i> Premium Account Status</li>
+                        <li><i class="fa-solid fa-check"></i> Priority Application Placement</li>
+                        <li><i class="fa-solid fa-check"></i> 24/7 Investor Support</li>
+                    </ul>
+                    <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                        <button class="btn btn-primary btn-invest" style="flex: 1;"
+                            onclick="openPremiumModal('Starter Growth', 100)">Join Plan</button>
+                        <button class="btn-share"
+                            style="width: 50px; height: 50px; border-radius: 12px; background: white; border: 1px solid var(--border-color); color: var(--primary-color);"
+                            onclick="shareContent('WorkBridge Starter Plan', 'Invest $100 and get $35 monthly + Premium Status!', window.location.href)"
+                            title="Share Plan">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan 2: Professional -->
+                <div class="invest-card"
+                    style="border-color: var(--primary-color); transform: scale(1.05); box-shadow: var(--shadow-lg);">
+                    <div
+                        style="position: absolute; top: 20px; left: -30px; background: var(--primary-color); color: white; padding: 5px 40px; transform: rotate(-45deg); font-size: 0.75rem; font-weight: 700; z-index: 3;">
+                        POPULAR</div>
+                    <div class="invest-icon" style="background: var(--primary-color); color: white;">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem;">Professional Investor</h3>
+                    <div class="invest-price">$250 <span>/ 6 Months</span></div>
+                    <div class="invest-return">$75 Monthly Return</div>
+                    <ul class="invest-features">
+                        <li><i class="fa-solid fa-check"></i> Total Payout: $450</li>
+                        <li><i class="fa-solid fa-crown" style="color: gold;"></i> FULL PREMIUM STATUS</li>
+                        <li><i class="fa-solid fa-check"></i> Application on Page 1 Always</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated Account Manager</li>
+                    </ul>
+                    <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                        <button class="btn btn-primary btn-invest" style="flex: 1;"
+                            onclick="openPremiumModal('Professional Investor', 250)">Join Plan</button>
+                        <button class="btn-share"
+                            style="width: 50px; height: 50px; border-radius: 12px; background: white; border: 1px solid var(--border-color); color: var(--primary-color);"
+                            onclick="shareContent('WorkBridge Professional Plan', 'Invest $250 and get $75 monthly + Full Premium Status!', window.location.href)"
+                            title="Share Plan">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan 3: Elite -->
+                <div class="invest-card">
+                    <div class="invest-icon">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <h3 style="margin-bottom: 1rem;">Elite Wealth Plan</h3>
+                    <div class="invest-price">$500 <span>/ 6 Months</span></div>
+                    <div class="invest-return">$150 Monthly Return</div>
+                    <ul class="invest-features">
+                        <li><i class="fa-solid fa-check"></i> Total Payout: $900</li>
+                        <li><i class="fa-solid fa-crown" style="color: gold;"></i> ELITE PREMIUM STATUS</li>
+                        <li><i class="fa-solid fa-check"></i> Guaranteed First Page Ranking</li>
+                        <li><i class="fa-solid fa-check"></i> VIP Profile Badge & Networking</li>
+                    </ul>
+                    <div style="display: flex; gap: 0.5rem; margin-top: auto;">
+                        <button class="btn btn-primary btn-invest" style="flex: 1;"
+                            onclick="openPremiumModal('Elite Wealth', 500)">Join Plan</button>
+                        <button class="btn-share"
+                            style="width: 50px; height: 50px; border-radius: 12px; background: white; border: 1px solid var(--border-color); color: var(--primary-color);"
+                            onclick="shareContent('WorkBridge Elite Plan', 'Invest $500 and get $150 monthly + Elite Premium Status!', window.location.href)"
+                            title="Share Plan">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Latest News Section -->
+        <section class="section reveal" style="background-color: #f8fafc;">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Latest Platform News</h2>
+                        <p class="section-subtitle">Stay updated with WorkBridge announcements and career tips</p>
+                    </div>
+                    <a href="news.html" class="btn-view-all">View All News <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="news-grid" id="news-home-grid">
+                    <!-- News items loaded dynamically via js/news-system.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- WorkBridge Foundation (Donation Section) -->
+        <section class="donation-section reveal">
+            <div class="container">
+                <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+                    <h2 class="section-title" style="color: #991b1b;"><i class="fa-solid fa-heart heart-pulse"></i>
+                        WorkBridge Foundation</h2>
+                    <p class="section-subtitle">Aapki thori si madad, kisi ki zindagi badal sakti hai. (Your small
+                        support
+                        can change a life.)</p>
+                </div>
+
+                <div class="charity-grid">
+                    <!-- Case 1 -->
+                    <article class="charity-card">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600"
+                            alt="Support Worker Family" class="charity-image">
+                        <div class="charity-body">
+                            <h3 class="charity-title">Support a Daily Worker's Family</h3>
+                            <p class="charity-desc">Help provide monthly rations and basic necessities to the families
+                                of
+                                our most hard-working daily wagers.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 65%;"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>Raised: Rs 65,000</span>
+                                    <span>Goal: Rs 100,000</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
+                                <a href="donations.html?cause=Support%20a%20Daily%20Worker's%20Family"
+                                    class="btn-donate" style="flex: 1; margin-top: 0;">Donate Now</a>
+                                <button class="btn-share"
+                                    style="background: white; color: #ef4444; border-color: #fecaca;"
+                                    onclick="shareContent('Charity: Support a Daily Worker\'s Family', 'Help WorkBridge Foundation support worker families.', window.location.origin + '/donations.html')"
+                                    title="Share Cause">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case 2 -->
+                    <article class="charity-card">
+                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600"
+                            alt="Education for Kids" class="charity-image">
+                        <div class="charity-body">
+                            <h3 class="charity-title">Education for Workers' Children</h3>
+                            <p class="charity-desc">Support the schooling, books, and uniforms of children whose parents
+                                work tirelessly to build our city.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%;"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>Raised: Rs 40,000</span>
+                                    <span>Goal: Rs 100,000</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
+                                <a href="donations.html?cause=Education%20for%20Workers'%20Children" class="btn-donate"
+                                    style="flex: 1; margin-top: 0;">Support Education</a>
+                                <button class="btn-share"
+                                    style="background: white; color: #ef4444; border-color: #fecaca;"
+                                    onclick="shareContent('Charity: Education for Workers\' Children', 'Help WorkBridge Foundation support education.', window.location.origin + '/donations.html')"
+                                    title="Share Cause">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Case 3 -->
+                    <article class="charity-card">
+                        <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=600"
+                            alt="Medical Emergency Fund" class="charity-image">
+                        <div class="charity-body">
+                            <h3 class="charity-title">Worker's Medical Emergency Fund</h3>
+                            <p class="charity-desc">A fund dedicated to providing immediate financial help for accidents
+                                or
+                                sudden illnesses of verified workers.</p>
+                            <div class="progress-container">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 85%;"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>Raised: Rs 85,000</span>
+                                    <span>Goal: Rs 100,000</span>
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: 0.8rem; margin-top: 1.5rem;">
+                                <a href="donations.html?cause=Worker's%20Medical%20Emergency%20Fund" class="btn-donate"
+                                    style="flex: 1; margin-top: 0;">Contribute Fund</a>
+                                <button class="btn-share"
+                                    style="background: white; color: #ef4444; border-color: #fecaca;"
+                                    onclick="shareContent('Charity: Worker\'s Medical Emergency Fund', 'Help WorkBridge Foundation support worker emergencies.', window.location.origin + '/donations.html')"
+                                    title="Share Cause">
+                                    <i class="fa-solid fa-share-nodes"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div style="text-align: center; margin-top: 3rem;">
+                    <a href="donations.html"
+                        style="color: #ef4444; font-weight: 700; text-decoration: none; border-bottom: 2px solid #ef4444; padding-bottom: 5px;">View
+                        All Charity Cases <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4 class="logo" style="color: white; margin-bottom: 1rem;">
+                            <i class="fa-solid fa-bridge-water"></i> Work<span>Bridge</span>
+                        </h4>
+                        <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.6;">Connecting talent with
+                            opportunity on a global scale. Discover reliable jobs and world-class services at your
+                            fingertips.</p>
+
+                        <div class="footer-social" style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                            <a href="#" class="social-fb" target="_blank" title="Facebook"
+                                style="display: none; width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-ig" target="_blank" title="Instagram"
+                                style="display: none; width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-tw" target="_blank" title="Twitter (X)"
+                                style="display: none; width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                                <i class="fa-brands fa-x-twitter"></i>
+                            </a>
+                            <a href="#" class="social-li" target="_blank" title="LinkedIn"
+                                style="display: none; width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-tk" target="_blank" title="TikTok"
+                                style="display: none; width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                                <i class="fa-brands fa-tiktok"></i>
+                            </a>
+                            <a href="#" class="social-yt" target="_blank" title="YouTube"
+                                style="display: none; width: 36px; height: 36px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; transition: all 0.3s ease;">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>For Workers</h4>
+                        <ul>
+                            <li><a href="#">Find Jobs</a></li>
+                            <li><a href="#">Create Profile</a></li>
+                            <li><a href="#">Success Stories</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>For Employers</h4>
+                        <ul>
+                            <li><a href="post-job.html">Post a Job</a></li>
+                            <li><a href="#">Browse Freelancers</a></li>
+                            <li><a href="#">Pricing</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="donations.html?cause=General%20Donation">Donations / Charity</a></li>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    &copy; 2026 WorkBridge. All rights reserved.
+                </div>
+            </div>
+        </footer>
+
+        <!-- Premium Investment Modal -->
+        <div id="premiumModal" class="modal-overlay">
+            <div class="donation-modal" style="border-top: 5px solid var(--primary-color);">
+                <div class="modal-header">
+                    <h2 style="font-size: 1.25rem;"><i class="fa-solid fa-crown" style="color: gold;"></i> Upgrade to
+                        Premium Account</h2>
+                    <button onclick="closePremiumModal()"
+                        style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div
+                        style="background: #f0fdf4; padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1.5rem; border: 1px solid #bcf0da;">
+                        <p style="color: #166534; font-size: 0.9rem; font-weight: 600;">
+                            <i class="fa-solid fa-circle-check"></i> Investing in <span
+                                id="premium-plan-name">Starter</span> Plan will unlock **Premium Benefits** for your
+                            account.
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <h4 style="margin-bottom: 0.8rem;">Premium Benefits Include:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="margin-bottom: 0.5rem; font-size: 0.9rem;"><i class="fa-solid fa-bolt"
+                                    style="color: var(--primary-color);"></i> **Top of the List**: Your applications
+                                appear
+                                on the first page.</li>
+                            <li style="margin-bottom: 0.5rem; font-size: 0.9rem;"><i class="fa-solid fa-star"
+                                    style="color: gold;"></i> **Premium Badge**: Verified VIP status on your public
+                                profile.
+                            </li>
+                            <li style="margin-bottom: 0.5rem; font-size: 0.9rem;"><i class="fa-solid fa-chart-line"
+                                    style="color: #6366f1;"></i> **2x Higher Visibility**: Get hired faster by top
+                                employers.</li>
+                        </ul>
+                    </div>
+
+                    <form id="premiumForm">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Plan Price
+                                    ($)</label>
+                                <input type="text" id="premium-plan-price" class="form-control" readonly
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); background: #f8fafc;">
+                            </div>
+                            <div class="form-group">
+                                <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Worker ID /
+                                    Name</label>
+                                <input type="text" class="form-control" placeholder="Enter Name/ID" required
+                                    style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                            </div>
+                        </div>
+
+                        <label style="font-weight: 600; margin-bottom: 0.5rem; display: block;">Select Payment
+                            Gateway</label>
+                        <div class="payment-grid" style="grid-template-columns: repeat(2, 1fr);">
+                            <div class="payment-option active">
+                                <i class="fa-solid fa-building-columns"></i>
+                                <div>Bank / Mobile</div>
+                            </div>
+                            <div class="payment-option">
+                                <i class="fa-brands fa-paypal"></i>
+                                <div>International</div>
+                            </div>
+                        </div>
+
+                        <div class="payment-details-box" style="display: block; margin-top: 1rem;">
+                            <p style="font-weight: 700;">Account: WorkBridge Premium</p>
+                            <p style="font-size: 0.85rem; margin-top: 0.5rem;">After payment, send screenshot to support
+                                for
+                                instant activation.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 600;">EasyPaisa: 0301 2233445</p>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; margin-top: 1.5rem; padding: 1rem; border-radius: var(--radius-md); font-weight: 700;">
+                            Confirm Upgrade to Premium
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/news-data.js"></script>
+        <script src="js/news-system.js"></script>
+        <script src="js/settings-sync.js"></script>
+        <script src="js/events.js"></script>
+        <script src="js/app.js"></script>
+        <script>
+            function openPremiumModal(plan, price) {
+                document.getElementById('premium-plan-name').textContent = plan;
+                document.getElementById('premium-plan-price').value = price;
+                document.getElementById('premiumModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closePremiumModal() {
+                document.getElementById('premiumModal').style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+
+            document.getElementById('premiumForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                alert('Congratulations! Your premium upgrade request has been submitted. After verification, your account will be prioritized on the first page! 🚀');
+                closePremiumModal();
+            });
+
+            window.onclick = function (event) {
+                const modal = document.getElementById('premiumModal');
+                if (event.target == modal) {
+                    closePremiumModal();
+                }
+            }
+        </script>
+</body>
+
+</html>

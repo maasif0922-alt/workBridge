@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | WorkBridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bridge-water"></i>
+                Work<span>Bridge</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="profiles.html">Freelancers</a>
+                <a href="donations.html">Donation</a>
+                <a href="user-profile.html" class="active">My Profile</a>
+                <a href="dashboard.html">Logout</a>
+            </div>
+            <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Profile Header -->
+    <section class="section" style="padding-top: 3rem; background: var(--bg-color);">
+        <div class="container">
+            <button onclick="history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <div
+                style="background: white; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border: 1px solid var(--border-color);">
+                <div style="display: flex; gap: 2rem; flex-wrap: wrap; align-items: center;">
+                    <div style="position: relative;">
+                        <img id="profile-img" src="https://ui-avatars.com/api/?name=User&background=random&size=120"
+                            alt="User Profile"
+                            style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--surface-color);">
+                        <button id="change-photo-btn"
+                            style="position: absolute; bottom: 5px; right: 5px; background: var(--primary-color); color: white; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer;"><i
+                                class="fa-solid fa-camera"></i></button>
+                    </div>
+                    <div style="flex: 1; min-width: 250px;">
+                        <h1 id="profile-name-display" style="font-size: 1.8rem; margin-bottom: 0.2rem;">Welcome Back!
+                        </h1>
+                        <p id="profile-title-display" style="color: var(--text-secondary); margin-bottom: 0.8rem;">
+                            Update your profile to attract
+                            more clients.</p>
+                        <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                            <span
+                                style="background: #e0f2fe; color: #0369a1; padding: 0.3rem 0.8rem; border-radius: var(--radius-full); font-size: 0.85rem; font-weight: 500;"><i
+                                    class="fa-solid fa-shield-check"></i> Verified Profile</span>
+                            <span id="joined-date" style="font-size: 0.85rem; color: var(--text-secondary);"><i
+                                    class="fa-solid fa-calendar"></i> Joined Jan 2026</span>
+                        </div>
+                    </div>
+                    <div style="text-align: right;">
+                        <button id="edit-profile-btn" class="btn btn-primary"><i class="fa-solid fa-pen"></i> Edit
+                            Profile</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 2.5rem;">
+                <!-- Sidebar -->
+                <div>
+                    <div
+                        style="background: white; padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color); margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1.1rem;">My Stats</h3>
+                        <div style="display: flex; flex-direction: column; gap: 1rem;">
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-secondary);">Jobs Applied</span>
+                                <span style="font-weight: 600;">12</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-secondary);">Ongoing Projects</span>
+                                <span style="font-weight: 600;">3</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <span style="color: var(--text-secondary);">Earnings</span>
+                                <span style="font-weight: 600; color: #10b981;">Rs 25,000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        style="background: white; padding: 1.5rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                        <h3 style="margin-bottom: 1.2rem; font-size: 1.1rem;">Quick Links</h3>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.8rem;">
+                            <li><a href="javascript:void(0)" onclick="switchView('activity')" class="quick-link active"
+                                    style="color: var(--primary-color); text-decoration: none; display: flex; align-items: center; gap: 0.8rem; font-weight: 600;"><i
+                                        class="fa-solid fa-clock-rotate-left" style="width: 20px;"></i> Recent
+                                    Activity</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchView('proposals')" class="quick-link"
+                                    style="color: var(--text-color); text-decoration: none; display: flex; align-items: center; gap: 0.8rem;"><i
+                                        class="fa-solid fa-file-invoice" style="width: 20px;"></i> My Proposals</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchView('saved')" class="quick-link"
+                                    style="color: var(--text-color); text-decoration: none; display: flex; align-items: center; gap: 0.8rem;"><i
+                                        class="fa-solid fa-heart" style="width: 20px;"></i> Saved Jobs</a></li>
+                            <li><a href="javascript:void(0)" onclick="switchView('settings')" class="quick-link"
+                                    style="color: var(--text-color); text-decoration: none; display: flex; align-items: center; gap: 0.8rem;"><i
+                                        class="fa-solid fa-gear" style="width: 20px;"></i> Account Settings</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Active View Container -->
+                <div id="active-view-container">
+                    <div
+                        style="background: white; padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--border-color);">
+                        <h3 id="view-title" style="margin-bottom: 1.5rem; font-size: 1.3rem;">My Recent Activity</h3>
+                        <div id="view-content" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <!-- Activity content (default) -->
+                            <div
+                                style="padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; gap: 1rem;">
+                                <div
+                                    style="background: #f0fdf4; color: #166534; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa-solid fa-check"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Job Posted Successfully</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-secondary);">Your job "Need Graphic
+                                        Designer for Logo" is now live.</p>
+                                    <span style="font-size: 0.75rem; color: #94a3b8;">2 hours ago</span>
+                                </div>
+                            </div>
+                            <div
+                                style="padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; gap: 1rem;">
+                                <div
+                                    style="background: #eef2ff; color: #3730a3; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                </div>
+                                <div>
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Proposal Sent</h4>
+                                    <p style="font-size: 0.85rem; color: var(--text-secondary);">You sent a proposal for
+                                        "Website Data Entry" project.</p>
+                                    <span style="font-size: 0.75rem; color: #94a3b8;">Yesterday</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Edit Profile Modal -->
+    <div id="edit-profile-modal" class="modal">
+        <div class="modal-content" style="max-width: 500px;">
+            <span class="close-modal" id="close-edit-modal">&times;</span>
+            <h2 style="margin-bottom: 1.5rem; font-size: 1.5rem;">Edit Profile</h2>
+            <form id="edit-profile-form">
+                <div class="form-group" style="margin-bottom: 1.2rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Full Name</label>
+                    <input type="text" id="edit-name" class="form-control" placeholder="Enter your name"
+                        style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);"
+                        required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.2rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">Professional Title</label>
+                    <input type="text" id="edit-title" class="form-control"
+                        placeholder="e.g. Graphic Designer / Developer"
+                        style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);"
+                        required>
+                </div>
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; font-weight: 500;">About Me</label>
+                    <textarea id="edit-about" class="form-control"
+                        style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: var(--radius-md); min-height: 100px;"
+                        placeholder="Tell clients about yourself..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem;">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom" style="margin-top: 0;">
+                &copy; 2026 WorkBridge (KaamLink). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script>
+        // Profile Modal Logic
+        const editModal = document.getElementById('edit-profile-modal');
+        const editBtn = document.getElementById('edit-profile-btn');
+        const closeEditModal = document.getElementById('close-edit-modal');
+        const editForm = document.getElementById('edit-profile-form');
+
+        // Display Elements
+        const nameDisplay = document.getElementById('profile-name-display');
+        const titleDisplay = document.getElementById('profile-title-display');
+
+        if (editBtn) {
+            editBtn.onclick = () => {
+                document.getElementById('edit-name').value = nameDisplay.textContent === 'Welcome Back!' ? '' : nameDisplay.textContent;
+                document.getElementById('edit-title').value = titleDisplay.textContent.includes('Update your profile') ? '' : titleDisplay.textContent;
+                editModal.style.display = 'flex';
+            };
+        }
+
+        if (closeEditModal) {
+            closeEditModal.onclick = () => editModal.style.display = 'none';
+        }
+
+        editForm.onsubmit = (e) => {
+            e.preventDefault();
+            const newName = document.getElementById('edit-name').value;
+            const newTitle = document.getElementById('edit-title').value;
+
+            nameDisplay.textContent = newName;
+            titleDisplay.textContent = newTitle;
+
+            // Success feedback
+            const saveBtn = editForm.querySelector('button[type="submit"]');
+            saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> Saved!';
+            saveBtn.style.backgroundColor = 'var(--secondary-color)';
+
+            setTimeout(() => {
+                editModal.style.display = 'none';
+                saveBtn.innerHTML = 'Save Changes';
+                saveBtn.style.backgroundColor = 'var(--primary-color)';
+            }, 1000);
+        };
+
+        // View Switching Logic
+        function switchView(view) {
+            const title = document.getElementById('view-title');
+            const content = document.getElementById('view-content');
+            const links = document.querySelectorAll('.quick-link');
+
+            links.forEach(link => {
+                link.style.color = 'var(--text-color)';
+                link.style.fontWeight = '400';
+            });
+
+            event.currentTarget.style.color = 'var(--primary-color)';
+            event.currentTarget.style.fontWeight = '600';
+
+            if (view === 'activity') {
+                title.textContent = 'My Recent Activity';
+                content.innerHTML = `
+                    <div style="padding-bottom: 1.5rem; border-bottom: 1px solid var(--border-color); display: flex; gap: 1rem;">
+                        <div style="background: #f0fdf4; color: #166534; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;"><i class="fa-solid fa-check"></i></div>
+                        <div>
+                            <h4 style="font-size: 1rem; margin-bottom: 0.2rem;">Job Posted Successfully</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Your job "Need Graphic Designer for Logo" is now live.</p>
+                            <span style="font-size: 0.75rem; color: #94a3b8;">2 hours ago</span>
+                        </div>
+                    </div>
+                `;
+            } else if (view === 'proposals') {
+                title.textContent = 'My Proposals';
+                content.innerHTML = `
+                    <div style="border: 1px solid var(--border-color); padding: 1.5rem; border-radius: var(--radius-md); display: flex; justify-content: space-between; align-items: center;">
+                        <div>
+                            <h4 style="font-size: 1rem;">Website Data Entry</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-secondary);">Status: <span style="color: var(--primary-color); font-weight: 600;">Pending</span></p>
+                        </div>
+                        <button class="btn" style="border: 1px solid var(--border-color); font-size: 0.85rem;">View Details</button>
+                    </div>
+                    <p style="text-align: center; color: var(--text-secondary); font-size: 0.9rem;">You have 1 active proposal.</p>
+                `;
+            } else if (view === 'saved') {
+                title.textContent = 'Saved Jobs';
+                content.innerHTML = `
+                    <div style="text-align: center; padding: 3rem 0;">
+                        <i class="fa-solid fa-heart-crack" style="font-size: 3rem; color: #cbd5e1; margin-bottom: 1rem;"></i>
+                        <p style="color: var(--text-secondary);">You haven't saved any jobs yet.</p>
+                        <a href="jobs.html" class="btn btn-primary" style="margin-top: 1rem; display: inline-block; text-decoration: none;">Browse Jobs</a>
+                    </div>
+                `;
+            } else if (view === 'settings') {
+                title.textContent = 'Account Settings';
+                content.innerHTML = `
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+                            <div>
+                                <h4 style="font-size: 1rem;">Email Notifications</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Receive updates about new jobs</p>
+                            </div>
+                            <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+                            <div>
+                                <h4 style="font-size: 1rem;">Public Profile</h4>
+                                <p style="font-size: 0.85rem; color: var(--text-secondary);">Allow clients to find you</p>
+                            </div>
+                            <input type="checkbox" checked style="width: 20px; height: 20px;">
+                        </div>
+                        <button class="btn" style="color: #ef4444; border: 1px solid #fee2e2; background: #fef2f2;">Delete Account</button>
+                    </div>
+                `;
+            }
+        }
+
+        // Photo Change Mockup
+        document.getElementById('change-photo-btn').onclick = () => {
+            alert('Profile picture upload feature coming soon! (Select an image to update)');
+        };
+    </script>
+</body>
+
+</html>

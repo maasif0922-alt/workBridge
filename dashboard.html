@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | WorkBridge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .dashboard-container {
+            display: flex;
+            min-height: calc(100vh - 4rem);
+        }
+
+        .sidebar {
+            width: 250px;
+            background: var(--surface-color);
+            border-right: 1px solid var(--border-color);
+            padding: 2rem 0;
+        }
+
+        .sidebar-menu {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-item {
+            padding: 1rem 2rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            border-left: 3px solid transparent;
+        }
+
+        .sidebar-item:hover,
+        .sidebar-item.active {
+            background: #f8fafc;
+            color: var(--primary-color);
+            border-left-color: var(--primary-color);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            background: var(--bg-color);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: var(--surface-color);
+            padding: 1.5rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-top: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background: #f8fafc;
+            font-weight: 600;
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+                display: flex;
+                overflow-x: auto;
+                padding: 1rem;
+            }
+
+            .sidebar-item {
+                padding: 0.5rem 1rem;
+                white-space: nowrap;
+                border-left: none;
+                border-bottom: 3px solid transparent;
+            }
+
+            .sidebar-item.active {
+                border-bottom-color: var(--primary-color);
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .data-table-wrapper {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container" style="max-width: 100%; padding: 0 2rem;">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bridge-water"></i>
+                Work<span>Bridge</span> <span
+                    style="font-size: 1rem; font-weight: normal; color: var(--text-secondary);">| Admin</span>
+            </a>
+            <div class="nav-links">
+                <a href="donations.html">Donations</a>
+                <a href="index.html">Back to Site</a>
+                <a href="index.html" class="btn btn-secondary">Logout</a>
+            </div>
+            <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-menu">
+                <a href="dashboard.html" class="sidebar-item active">
+                    <i class="fa-solid fa-chart-pie"></i> Overview
+                </a>
+                <a href="profiles.html" class="sidebar-item">
+                    <i class="fa-solid fa-users"></i> Users Management
+                </a>
+                <a href="jobs.html" class="sidebar-item">
+                    <i class="fa-solid fa-briefcase"></i> Job Posts
+                </a>
+                <a href="admin-events.html" class="sidebar-item">
+                    <i class="fa-solid fa-calendar-star"></i> Manage Events
+                </a>
+                <a href="admin-ads.html" class="sidebar-item">
+                    <i class="fa-solid fa-megaphone"></i> Manage Ads
+                </a>
+                <a href="news.html" class="sidebar-item">
+                    <i class="fa-solid fa-newspaper"></i> News Management
+                </a>
+                <a href="settings.html" class="sidebar-item">
+                    <i class="fa-solid fa-gear"></i> Settings
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <button onclick="history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <h2 style="margin-bottom: 1.5rem;">Dashboard Overview</h2>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">Total Users</div>
+                    <div class="stat-value">1,248</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Active Job Posts</div>
+                    <div class="stat-value">84</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Services Listed</div>
+                    <div class="stat-value">312</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">Messages Sent Today</div>
+                    <div class="stat-value">450+</div>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 1rem;">Recent Users Joined</h3>
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>User Name</th>
+                            <th>Role</th>
+                            <th>Location</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="display: flex; align-items: center; gap: 0.75rem;">
+                                <img src="https://ui-avatars.com/api/?name=Jawad+Ahmed&background=random"
+                                    style="width: 30px; border-radius: 50%;">
+                                <span>Jawad Ahmed</span>
+                            </td>
+                            <td>Employer</td>
+                            <td>Lahore</td>
+                            <td><span class="badge" style="background: #dcfce7; color: #166534;">Active</span></td>
+                            <td><a href="profile-ali.html" class="btn"
+                                    style="padding: 0.25rem 0.75rem; font-size: 0.8rem; border: 1px solid var(--border-color); display: inline-block;">View</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="display: flex; align-items: center; gap: 0.75rem;">
+                                <img src="https://ui-avatars.com/api/?name=Sadia+Khan&background=random"
+                                    style="width: 30px; border-radius: 50%;">
+                                <span>Sadia Khan</span>
+                            </td>
+                            <td>Freelancer</td>
+                            <td>Islamabad</td>
+                            <td><span class="badge" style="background: #dcfce7; color: #166534;">Active</span></td>
+                            <td><a href="profile-fatima.html" class="btn"
+                                    style="padding: 0.25rem 0.75rem; font-size: 0.8rem; border: 1px solid var(--border-color); display: inline-block;">View</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="display: flex; align-items: center; gap: 0.75rem;">
+                                <img src="https://ui-avatars.com/api/?name=Waqas+Ali&background=random"
+                                    style="width: 30px; border-radius: 50%;">
+                                <span>Waqas Ali</span>
+                            </td>
+                            <td>Daily Worker</td>
+                            <td>Karachi</td>
+                            <td><span class="badge" style="background: #fef08a; color: #854d0e;">Pending</span></td>
+                            <td><a href="profiles.html" class="btn"
+                                    style="padding: 0.25rem 0.75rem; font-size: 0.8rem; border: 1px solid var(--border-color); display: inline-block;">Verify</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

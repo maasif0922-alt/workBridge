@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donations - WorkBridge Foundation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body style="background-color: var(--bg-color);">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-bridge-water"></i>
+                Work<span>Bridge</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="profiles.html">Freelancers</a>
+                <a href="donations.html" class="active">Donation</a>
+                <a href="user-profile.html">My Profile</a>
+                <a href="dashboard.html">Login</a>
+            </div>
+            <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="section"
+        style="padding: 5rem 0; text-align: center; background: linear-gradient(-45deg, #fff5f5, #fff1f1); border-bottom: 2px solid #fee2e2;">
+        <div class="container">
+            <button onclick="history.back()" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back</button>
+            <h1 class="section-title" style="color: #991b1b;"><i class="fa-solid fa-heart heart-pulse"></i> WorkBridge
+                Foundation</h1>
+            <p class="section-subtitle"
+                style="max-width: 800px; margin-left: auto; margin-right: auto; font-size: 1.2rem;">
+                Hum sab mil kar dunya ko behtar bana sakte hain. Hamari choti si koshish kisi mustahiq mazdoor ya uske
+                bache ki zindagi sanwar sakti hai.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Choose a Cause to Support</h2>
+                <div style="width: 80px; height: 4px; background: #ef4444; margin: 0 auto; border-radius: 2px;"></div>
+            </div>
+
+            <div class="charity-grid">
+                <!-- Case 1 -->
+                <article class="charity-card">
+                    <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600"
+                        alt="Support Worker Family" class="charity-image">
+                    <div class="charity-body">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge" style="background: #fee2e2; color: #ef4444;">Urgent</span>
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">65% Funded</span>
+                        </div>
+                        <h3 class="charity-title">Support a Daily Worker's Family</h3>
+                        <p class="charity-desc">Provision of monthly food packages (Rashan) for 50 families of daily
+                            based construction workers who are currently out of work due to health issues.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 65%;"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Raised: Rs 65,000</span>
+                                <span>Goal: Rs 100,000</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.8rem;">
+                            <button class="btn-donate" onclick="openDonationModal('Support a Daily Worker\'s Family')"
+                                style="flex: 1;">Donate Now</button>
+                            <button class="btn-share"
+                                onclick="shareContent('Charity: Support a Daily Worker\'s Family', 'Help WorkBridge Foundation support worker families.', window.location.href)"
+                                title="Share Cause">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case 2 -->
+                <article class="charity-card">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=600"
+                        alt="Education for Kids" class="charity-image">
+                    <div class="charity-body">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge" style="background: #dcfce7; color: #166534;">Ongoing</span>
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">40% Funded</span>
+                        </div>
+                        <h3 class="charity-title">Education for Workers' Children</h3>
+                        <p class="charity-desc">Covering the annual school fees, uniforms, and books for 20 children to
+                            ensure their future is bright and full of opportunities.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 40%;"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Raised: Rs 40,000</span>
+                                <span>Goal: Rs 100,000</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.8rem;">
+                            <button class="btn-donate" onclick="openDonationModal('Education for Workers\' Children')"
+                                style="flex: 1;">Support Education</button>
+                            <button class="btn-share"
+                                onclick="shareContent('Charity: Education for Workers\' Children', 'Help WorkBridge Foundation support education.', window.location.href)"
+                                title="Share Cause">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Case 3 -->
+                <article class="charity-card">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&q=80&w=600"
+                        alt="Medical Emergency Fund" class="charity-image">
+                    <div class="charity-body">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="badge" style="background: #fef3c7; color: #92400e;">Critical</span>
+                            <span style="font-size: 0.8rem; color: var(--text-secondary);">85% Funded</span>
+                        </div>
+                        <h3 class="charity-title">Worker's Medical Emergency Fund</h3>
+                        <p class="charity-desc">Emergency surgeries and medical bills for workers injured on sites. Your
+                            contribution ensures no one is left untreated because of money.</p>
+                        <div class="progress-container">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%;"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Raised: Rs 85,000</span>
+                                <span>Goal: Rs 100,000</span>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 0.8rem;">
+                            <button class="btn-donate" onclick="openDonationModal('Worker\'s Medical Emergency Fund')"
+                                style="flex: 1;">Contribute Fund</button>
+                            <button class="btn-share"
+                                onclick="shareContent('Charity: Worker\'s Medical Emergency Fund', 'Help WorkBridge Foundation support worker emergencies.', window.location.href)"
+                                title="Share Cause">
+                                <i class="fa-solid fa-share-nodes"></i>
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div
+                style="max-width: 600px; margin: 4rem auto 0; background: white; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); border-left: 5px solid #ef4444;">
+                <h3 style="margin-bottom: 1rem; color: #991b1b;">Why Donate to WorkBridge?</h3>
+                <p style="color: var(--text-secondary); line-height: 1.6;">
+                    WorkBridge is more than just a job platform; it's a family. We verify every case manually to ensure
+                    that 100% of your donation reaches the person in need. Transparent records and direct impact.
+                </p>
+                <div style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+                    <button class="btn btn-primary" style="flex: 1;"><i class="fa-solid fa-address-book"></i> Suggest a
+                        Case</button>
+                    <button class="btn btn-whatsapp" style="flex: 1;"><i class="fa-brands fa-whatsapp"></i>
+                        Inquiry</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof of Impact / Videos -->
+    <section class="section proof-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title" style="color: white;">Our Impact & Verification</h2>
+                <p class="section-subtitle" style="color: #cbd5e1;">Hum jo kehte hain, wo kar ke dikhate hain. See our
+                    previous charity drives and distribution videos.</p>
+            </div>
+
+            <div class="cards-grid reveal">
+                <div class="card" style="background: #334155; border: none;">
+                    <div class="video-container">
+                        <!-- Placeholder for Video -->
+                        <div
+                            style="position: absolute; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; flex-direction: column;">
+                            <i class="fa-solid fa-circle-play" style="font-size: 4rem; color: #ef4444;"></i>
+                            <p style="margin-top: 1rem; color: white;">Video: Ration Distribution 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card" style="background: #334155; border: none;">
+                    <div class="video-container">
+                        <div
+                            style="position: absolute; display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; flex-direction: column;">
+                            <i class="fa-solid fa-circle-play" style="font-size: 4rem; color: #ef4444;"></i>
+                            <p style="margin-top: 1rem; color: white;">Video: Medical Help Proof</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Modal -->
+    <div class="modal-overlay" id="donationModal">
+        <div class="donation-modal">
+            <div class="modal-header">
+                <h2 style="font-size: 1.25rem;"><i class="fa-solid fa-heart" style="color: #ef4444;"></i> Make a
+                    Contribution</h2>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <button class="btn-share"
+                        onclick="shareContent('Donate to ' + document.getElementById('selectedCause').value, 'Support this cause on WorkBridge Foundation.', window.location.href + '?cause=' + encodeURIComponent(document.getElementById('selectedCause').value))"
+                        title="Share this Cause">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </button>
+                    <button onclick="closeModal()"
+                        style="background: none; border: none; font-size: 1.5rem; cursor: pointer;">&times;</button>
+                </div>
+            </div>
+            <div class="modal-body">
+                <form id="donationForm">
+                    <div class="form-group" style="margin-bottom: 1rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Selected Cause</label>
+                        <input type="text" id="selectedCause" class="form-control"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);"
+                            readonly>
+                    </div>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Amount (Rs /
+                                $)</label>
+                            <input type="number" class="form-control" placeholder="Enter amount" required
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                        </div>
+                        <div class="form-group">
+                            <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Your Name</label>
+                            <input type="text" class="form-control" placeholder="Optional"
+                                style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);">
+                        </div>
+                    </div>
+
+                    <label style="font-weight: 600;">Select Payment Method</label>
+                    <div class="payment-grid">
+                        <div class="payment-option" onclick="showDetails('easypaisa', event)">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <div>EasyPaisa</div>
+                        </div>
+                        <div class="payment-option" onclick="showDetails('bank', event)">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <div>Bank Account</div>
+                        </div>
+                        <div class="payment-option" onclick="showDetails('paypal', event)">
+                            <i class="fa-brands fa-paypal"></i>
+                            <div>PayPal</div>
+                        </div>
+                        <div class="payment-option" onclick="showDetails('crypto', event)">
+                            <i class="fa-brands fa-bitcoin"></i>
+                            <div>Crypto / USDT</div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Details -->
+                    <div id="easypaisa-details" class="payment-details-box">
+                        <p style="font-weight: 700;">EasyPaisa Account</p>
+                        <p style="margin-top: 0.5rem;">Account Title: <strong>Muhammad Bilal</strong></p>
+                        <p>Number: <strong id="ep-num">0301 2233445</strong> <button type="button" class="copy-btn"
+                                onclick="copyText('0301 2233445')">Copy</button></p>
+                    </div>
+
+                    <div id="bank-details" class="payment-details-box">
+                        <p style="font-weight: 700;">HBL Bank Account</p>
+                        <p style="margin-top: 0.5rem;">IBAN: <strong id="bank-iban">PK00 HBL 1234 5678 9012</strong>
+                            <button type="button" class="copy-btn"
+                                onclick="copyText('PK00 HBL 1234 5678 9012')">Copy</button>
+                        </p>
+                        <p>Account Title: <strong>Muhammad Bilal</strong></p>
+                    </div>
+
+                    <div id="paypal-details" class="payment-details-box">
+                        <p style="font-weight: 700;">PayPal Email</p>
+                        <p style="margin-top: 0.5rem;">Email: <strong
+                                id="pp-email">workbridge.charity@gmail.com</strong> <button type="button"
+                                class="copy-btn" onclick="copyText('workbridge.charity@gmail.com')">Copy</button></p>
+                    </div>
+
+                    <div id="crypto-details" class="payment-details-box">
+                        <p style="font-weight: 700;">USDT / Binance ID</p>
+                        <p style="margin-top: 0.5rem;">TRC20 Address: <strong id="crypto-usdt">TX99...ABC888</strong>
+                            <button type="button" class="copy-btn" onclick="copyText('TX99...ABC888')">Copy</button>
+                        </p>
+                        <p>Binance Pay ID: <strong>99988877</strong></p>
+                    </div>
+
+                    <div class="form-group" style="margin-top: 1.5rem;">
+                        <label style="display: block; margin-bottom: 0.5rem; font-weight: 600;">Message or Reference
+                            (Optional)</label>
+                        <textarea rows="2"
+                            style="width: 100%; padding: 0.75rem; border: 1px solid var(--border-color); border-radius: var(--radius-md);"
+                            placeholder="Any special instruction?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-donate" style="margin-top: 1.5rem;">I Have Donated
+                        (Confirm)</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/events.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        function openDonationModal(cause) {
+            document.getElementById('donationModal').style.display = 'flex';
+            document.getElementById('selectedCause').value = cause;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('donationModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function showDetails(type, event) {
+            // Reset options
+            document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
+            document.querySelectorAll('.payment-details-box').forEach(box => box.style.display = 'none');
+
+            // Show selected
+            event.currentTarget.classList.add('active');
+            document.getElementById(type + '-details').style.display = 'block';
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            alert('Copied: ' + text);
+        }
+
+        document.getElementById('donationForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('JazakAllah! Aapki contribution ki request mosool ho chuki hai. Hum jald hi verification ke baad ise update karenge.');
+            closeModal();
+        });
+
+        window.onclick = function (event) {
+            if (event.target == document.getElementById('donationModal')) {
+                closeModal();
+            }
+        }
+
+        // Auto-open modal if cause is in URL
+        window.addEventListener('load', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const cause = urlParams.get('cause');
+            if (cause) {
+                openDonationModal(cause);
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-social" style="display: flex; gap: 1rem; justify-content: center; margin-bottom: 1rem;">
+                <a href="#" class="social-fb" target="_blank" title="Facebook"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-ig" target="_blank" title="Instagram"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="social-tw" target="_blank" title="Twitter (X)"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+                <a href="#" class="social-li" target="_blank" title="LinkedIn"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="#" class="social-tk" target="_blank" title="TikTok"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="#" class="social-yt" target="_blank" title="YouTube"
+                    style="display: none; width: 32px; height: 32px; border-radius: 50%; background: #1e293b; color: white; align-items: center; justify-content: center; text-decoration: none; font-size: 0.9rem;">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+            </div>
+            <div class="footer-bottom"
+                style="margin-top: 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem;">
+                &copy; 2026 WorkBridge (KaamLink). All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/settings-sync.js"></script>
+</body>
+
+</html>
