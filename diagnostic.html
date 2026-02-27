@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Path Diagnostic Tool</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+
+        .diagnostic-card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>WorkBridge Path Diagnostic</h1>
+    <p>Upload this file to your server and open it in your browser. It will check if your assets are reachable.</p>
+
+    <div class="diagnostic-card">
+        <h3>1. CSS Check</h3>
+        <p id="css-check">Checking css/styles.css...</p>
+    </div>
+
+    <div class="diagnostic-card">
+        <h3>2. JS Check</h3>
+        <p id="js-check">Checking js/app.js...</p>
+    </div>
+
+    <div class="diagnostic-card">
+        <h3>3. Case Sensitivity Check</h3>
+        <p id="case-check">Checking if JS/app.js (Capital) works...</p>
+    </div>
+
+    <script>
+        function checkFile(path, elementId) {
+            fetch(path)
+                .then(response => {
+                    if (response.ok) {
+                        document.getElementById(elementId).innerHTML = '<span class="success">SUCCESS:</span> Found ' + path;
+                    } else {
+                        document.getElementById(elementId).innerHTML = '<span class="error">FAILED:</span> ' + path + ' (Error ' + response.status + ')';
+                    }
+                })
+                .catch(err => {
+                    document.getElementById(elementId).innerHTML = '<span class="error">ERROR:</span> Could not even attempt to fetch ' + path;
+                });
+        }
+
+        checkFile('css/styles.css', 'css-check');
+        checkFile('js/app.js', 'js-check');
+        checkFile('JS/app.js', 'case-check');
+    </script>
+</body>
+
+</html>
