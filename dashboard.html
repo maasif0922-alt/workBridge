@@ -149,7 +149,7 @@
             <div class="nav-links">
                 <a href="donations.html">Donations</a>
                 <a href="index.html">Back to Site</a>
-                <a href="index.html" class="btn btn-secondary">Logout</a>
+                <a href="javascript:void(0)" onclick="handleLogout()" class="btn btn-secondary">Logout</a>
             </div>
             <button class="menu-toggle"><i class="fa-solid fa-bars"></i></button>
         </div>
@@ -160,7 +160,7 @@
         <aside class="sidebar">
             <div class="sidebar-menu">
                 <a href="dashboard.html" class="sidebar-item active">
-                    <i class="fa-solid fa-chart-pie"></i> Overview
+                    <i class="fa-solid fa-chart-line"></i> Overview
                 </a>
                 <a href="profiles.html" class="sidebar-item">
                     <i class="fa-solid fa-users"></i> Users Management
@@ -169,16 +169,38 @@
                     <i class="fa-solid fa-briefcase"></i> Job Posts
                 </a>
                 <a href="admin-events.html" class="sidebar-item">
-                    <i class="fa-solid fa-calendar-star"></i> Manage Events
+                    <i class="fa-solid fa-calendar-check"></i> Manage Events
+                </a>
+                <a href="admin-video-ad.html" class="sidebar-item">
+                    <i class="fa-solid fa-video"></i> Manage Video Ads
                 </a>
                 <a href="admin-ads.html" class="sidebar-item">
-                    <i class="fa-solid fa-megaphone"></i> Manage Ads
+                    <i class="fa-solid fa-rectangle-ad"></i> Manage Ads
                 </a>
-                <a href="news.html" class="sidebar-item">
+                <a href="admin-news.html" class="sidebar-item">
                     <i class="fa-solid fa-newspaper"></i> News Management
                 </a>
+                <a href="admin-donations.html" class="sidebar-item">
+                    <i class="fa-solid fa-hand-holding-heart"></i> Donor Records
+                </a>
+                <a href="admin-donation-posts.html" class="sidebar-item">
+                    <i class="fa-solid fa-square-rss"></i> Donation Posts
+                </a>
+                <a href="admin-investments.html" class="sidebar-item">
+                    <i class="fa-solid fa-money-bill-trend-up"></i> Investment Payments
+                </a>
+                <hr style="border: none; border-top: 1px solid var(--border-color); margin: 0.5rem 2rem;">
+                <a href="settings.html?tab=inv" class="sidebar-item">
+                    <i class="fa-solid fa-credit-card"></i> Manage Inv Payments
+                </a>
+                <a href="settings.html?tab=don" class="sidebar-item">
+                    <i class="fa-solid fa-heart-circle-check"></i> Manage Don Payments
+                </a>
+                <a href="admin-legal.html" class="sidebar-item">
+                    <i class="fa-solid fa-file-contract"></i> ToS & Privacy
+                </a>
                 <a href="settings.html" class="sidebar-item">
-                    <i class="fa-solid fa-gear"></i> Settings
+                    <i class="fa-solid fa-gears"></i> Site Settings
                 </a>
             </div>
         </aside>
@@ -265,7 +287,41 @@
         </main>
     </div>
 
+    <script>
+        // Simulate real-time stats updates
+        document.addEventListener('DOMContentLoaded', () => {
+            const stats = document.querySelectorAll('.stat-value');
+            stats.forEach(stat => {
+                const finalValue = parseInt(stat.innerText.replace(',', '').replace('+', ''));
+                let startValue = 0;
+                const duration = 2000;
+                const increment = Math.ceil(finalValue / (duration / 16));
+
+                const timer = setInterval(() => {
+                    startValue += increment;
+                    if (startValue >= finalValue) {
+                        stat.innerText = finalValue.toLocaleString() + (stat.innerText.includes('+') ? '+' : '');
+                        clearInterval(timer);
+                    } else {
+                        stat.innerText = startValue.toLocaleString();
+                    }
+                }, 16);
+            });
+        });
+
+        // Handle sidebar item switching
+        const sidebarItems = document.querySelectorAll('.sidebar-item');
+        sidebarItems.forEach(item => {
+            if (item.getAttribute('href') === 'dashboard.html') return;
+
+            item.addEventListener('click', (e) => {
+                // If it's a page link, let it navigate
+                // If we want to simulate SPA, we could prevent default
+            });
+        });
+    </script>
     <script src="./js/app.js"></script>
+    <script src="./js/auth.js"></script>
 </body>
 
 </html>

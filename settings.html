@@ -153,22 +153,147 @@
                         <input type="url" id="setting-tw" class="form-control"
                             placeholder="https://twitter.com/yourpage">
                     </div>
-                    <div class="form-group">
-                        <label><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i> LinkedIn URL</label>
-                        <input type="url" id="setting-li" class="form-control"
-                            placeholder="https://linkedin.com/company/yourpage">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fa-brands fa-tiktok" style="color: #000000;"></i> TikTok URL</label>
-                        <input type="url" id="setting-tk" class="form-control"
-                            placeholder="https://tiktok.com/@yourpage">
-                    </div>
-                    <div class="form-group">
-                        <label><i class="fa-brands fa-youtube" style="color: #ff0000;"></i> YouTube URL</label>
-                        <input type="url" id="setting-yt" class="form-control"
-                            placeholder="https://youtube.com/c/yourpage">
-                    </div>
                     <button type="submit" class="btn-save">Save Social Links</button>
+                </form>
+            </div>
+
+            <!-- Video Advertisement Management -->
+            <div class="settings-card" id="video-ad-card">
+                <div class="settings-header">
+                    <i class="fa-solid fa-video"></i>
+                    <h2 style="font-size: 1.25rem;">Video Ad (Paid Promotion)</h2>
+                </div>
+                <form id="video-ad-settings">
+                    <div class="form-group">
+                        <label>Video URL (YouTube Embed or .mp4)</label>
+                        <input type="text" id="setting-video-url" class="form-control"
+                            placeholder="https://www.youtube.com/embed/...">
+                        <small style="color: var(--text-secondary);">Use 'Embed' URL for YouTube videos.</small>
+                    </div>
+                    <div class="form-group">
+                        <label>Promo Title</label>
+                        <input type="text" id="setting-video-title" class="form-control"
+                            placeholder="e.g. Premium Business Ad">
+                    </div>
+                    <div class="form-group">
+                        <label>Promo Description</label>
+                        <textarea id="setting-video-desc" class="form-control" rows="2"
+                            placeholder="Briefly describe the promotion..."></textarea>
+                    </div>
+                    <div class="form-group" style="margin-top: 1rem;">
+                        <label>Promotion / Click Link</label>
+                        <input type="text" id="setting-video-link" class="form-control"
+                            placeholder="https://example.com/promotion">
+                        <small style="color: var(--text-secondary);">Where visitors go when they click the ad.</small>
+                    </div>
+                    <div class="form-group">
+                        <label style="display: flex; align-items: center; gap: 10px; cursor: pointer;">
+                            <input type="checkbox" id="setting-video-active"> Show Promotion on Homepage
+                        </label>
+                    </div>
+                    <button type="submit" class="btn-save">Update Promotion</button>
+                </form>
+            </div>
+
+            <!-- Investment Payment Account Management -->
+            <div class="settings-card" id="inv-card">
+                <div class="settings-header">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <h2 style="font-size: 1.25rem;">Investment Payment Accounts</h2>
+                </div>
+                <form id="inv-payment-settings">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>Bank Name</label>
+                            <input type="text" id="setting-inv-bank-name" class="form-control"
+                                placeholder="e.g. HBL Bank">
+                        </div>
+                        <div class="form-group">
+                            <label>Account Holder Name</label>
+                            <input type="text" id="setting-inv-acc-title" class="form-control"
+                                placeholder="Name on Account">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Account / IBAN Number</label>
+                        <input type="text" id="setting-inv-acc-num" class="form-control" placeholder="PK00 HBL...">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>EasyPaisa Number</label>
+                            <input type="text" id="setting-inv-easypaisa" class="form-control"
+                                placeholder="03xx xxxxxxx">
+                        </div>
+                        <div class="form-group">
+                            <label>JazzCash Number</label>
+                            <input type="text" id="setting-inv-jazzcash" class="form-control"
+                                placeholder="03xx xxxxxxx">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>PayPal Email (Intl)</label>
+                            <input type="email" id="setting-inv-paypal" class="form-control"
+                                placeholder="your@paypal.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Binance ID / USDT Address (Crypto)</label>
+                            <input type="text" id="setting-inv-binance" class="form-control"
+                                placeholder="TRC20 Address or Pay ID">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-save">Save Investment Info</button>
+                </form>
+            </div>
+
+            <!-- Donation Payment Account Management -->
+            <div class="settings-card" id="don-card">
+                <div class="settings-header">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    <h2 style="font-size: 1.25rem;">Donation Payment Accounts</h2>
+                </div>
+                <form id="don-payment-settings">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>Bank Name</label>
+                            <input type="text" id="setting-don-bank-name" class="form-control"
+                                placeholder="e.g. HBL Bank">
+                        </div>
+                        <div class="form-group">
+                            <label>Account Holder Name</label>
+                            <input type="text" id="setting-don-acc-title" class="form-control"
+                                placeholder="Name on Account">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Account / IBAN Number</label>
+                        <input type="text" id="setting-don-acc-num" class="form-control" placeholder="PK00 HBL...">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>EasyPaisa Number</label>
+                            <input type="text" id="setting-don-easypaisa" class="form-control"
+                                placeholder="03xx xxxxxxx">
+                        </div>
+                        <div class="form-group">
+                            <label>JazzCash Number</label>
+                            <input type="text" id="setting-don-jazzcash" class="form-control"
+                                placeholder="03xx xxxxxxx">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                        <div class="form-group">
+                            <label>PayPal Email (Intl)</label>
+                            <input type="email" id="setting-don-paypal" class="form-control"
+                                placeholder="donations@paypal.com">
+                        </div>
+                        <div class="form-group">
+                            <label>Binance ID / USDT Address (Crypto)</label>
+                            <input type="text" id="setting-don-binance" class="form-control"
+                                placeholder="TRC20 Address or Pay ID">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-save">Save Donation Info</button>
                 </form>
             </div>
         </div>
@@ -196,9 +321,50 @@
                 document.getElementById('setting-fb').value = s.socialFb || '';
                 document.getElementById('setting-ig').value = s.socialIg || '';
                 document.getElementById('setting-tw').value = s.socialTw || '';
-                document.getElementById('setting-li').value = s.socialLi || '';
-                document.getElementById('setting-tk').value = s.socialTk || '';
-                document.getElementById('setting-yt').value = s.socialYt || '';
+
+                // Video Ad Settings
+                document.getElementById('setting-video-url').value = s.videoUrl || '';
+                document.getElementById('setting-video-title').value = s.videoTitle || '';
+                document.getElementById('setting-video-desc').value = s.videoDesc || '';
+                document.getElementById('setting-video-link').value = s.videoLink || '';
+                document.getElementById('setting-video-active').checked = s.videoActive || false;
+
+                // Investment Payment Info
+                document.getElementById('setting-inv-bank-name').value = s.invBankName || '';
+                document.getElementById('setting-inv-acc-title').value = s.invAccTitle || '';
+                document.getElementById('setting-inv-acc-num').value = s.invAccNum || '';
+                document.getElementById('setting-inv-easypaisa').value = s.invEasypaisa || '';
+                document.getElementById('setting-inv-jazzcash').value = s.invJazzcash || '';
+                document.getElementById('setting-inv-paypal').value = s.invPaypal || '';
+                document.getElementById('setting-inv-binance').value = s.invBinance || '';
+
+                // Donation Payment Info
+                document.getElementById('setting-don-bank-name').value = s.donBankName || '';
+                document.getElementById('setting-don-acc-title').value = s.donAccTitle || '';
+                document.getElementById('setting-don-acc-num').value = s.donAccNum || '';
+                document.getElementById('setting-don-easypaisa').value = s.donEasypaisa || '';
+                document.getElementById('setting-don-jazzcash').value = s.donJazzcash || '';
+                document.getElementById('setting-don-paypal').value = s.donPaypal || '';
+                document.getElementById('setting-don-binance').value = s.donBinance || '';
+            }
+
+            // Tab Parameter Logic
+            const urlParams = new URLSearchParams(window.location.search);
+            const tab = urlParams.get('tab');
+            if (tab === 'inv') {
+                const card = document.getElementById('inv-card');
+                if (card) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.style.borderColor = 'var(--primary-color)';
+                    card.style.boxShadow = '0 0 15px rgba(37, 99, 235, 0.2)';
+                }
+            } else if (tab === 'don') {
+                const card = document.getElementById('don-card');
+                if (card) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.style.borderColor = 'var(--primary-color)';
+                    card.style.boxShadow = '0 0 15px rgba(37, 99, 235, 0.2)';
+                }
             }
         });
 
@@ -220,6 +386,24 @@
             saveAll();
         };
 
+        // Save Video Ad
+        document.getElementById('video-ad-settings').onsubmit = (e) => {
+            e.preventDefault();
+            saveAll();
+        };
+
+        // Save Investment Info
+        document.getElementById('inv-payment-settings').onsubmit = (e) => {
+            e.preventDefault();
+            saveAll();
+        };
+
+        // Save Donation Info
+        document.getElementById('don-payment-settings').onsubmit = (e) => {
+            e.preventDefault();
+            saveAll();
+        };
+
         function saveAll() {
             const settings = {
                 whatsapp: document.getElementById('setting-whatsapp').value,
@@ -229,9 +413,31 @@
                 socialFb: document.getElementById('setting-fb').value,
                 socialIg: document.getElementById('setting-ig').value,
                 socialTw: document.getElementById('setting-tw').value,
-                socialLi: document.getElementById('setting-li').value,
-                socialTk: document.getElementById('setting-tk').value,
-                socialYt: document.getElementById('setting-yt').value
+
+                // Video Ad
+                videoUrl: document.getElementById('setting-video-url').value,
+                videoTitle: document.getElementById('setting-video-title').value,
+                videoDesc: document.getElementById('setting-video-desc').value,
+                videoLink: document.getElementById('setting-video-link').value,
+                videoActive: document.getElementById('setting-video-active').checked,
+
+                // Investment
+                invBankName: document.getElementById('setting-inv-bank-name').value,
+                invAccTitle: document.getElementById('setting-inv-acc-title').value,
+                invAccNum: document.getElementById('setting-inv-acc-num').value,
+                invEasypaisa: document.getElementById('setting-inv-easypaisa').value,
+                invJazzcash: document.getElementById('setting-inv-jazzcash').value,
+                invPaypal: document.getElementById('setting-inv-paypal').value,
+                invBinance: document.getElementById('setting-inv-binance').value,
+
+                // Donation
+                donBankName: document.getElementById('setting-don-bank-name').value,
+                donAccTitle: document.getElementById('setting-don-acc-title').value,
+                donAccNum: document.getElementById('setting-don-acc-num').value,
+                donEasypaisa: document.getElementById('setting-don-easypaisa').value,
+                donJazzcash: document.getElementById('setting-don-jazzcash').value,
+                donPaypal: document.getElementById('setting-don-paypal').value,
+                donBinance: document.getElementById('setting-don-binance').value
             };
             localStorage.setItem('workbridge_settings', JSON.stringify(settings));
             alert('Settings updated successfully!');

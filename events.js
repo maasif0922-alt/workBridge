@@ -393,7 +393,35 @@ document.addEventListener('DOMContentLoaded', () => {
         if (form) {
             form.onsubmit = (e) => {
                 e.preventDefault();
-                alert('JazakAllah! Your donation request has been received. Our team will contact you soon.');
+
+                const donorName = form.querySelector('input[placeholder="Enter your name"]').value;
+                const amount = form.querySelector('input[placeholder="Enter amount"]').value;
+                const method = form.querySelector('select').value;
+                const cause = document.getElementById('selected-cause').textContent;
+                const date = new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+
+                // Save to pending donations (Centralized Storage)
+                const pendingDonations = JSON.parse(localStorage.getItem('workbridge_pending_donations') || '[]');
+                pendingDonations.push({
+                    date: date,
+                    name: donorName,
+                    cause: cause + " (Event Widget)",
+                    amount: "Rs. " + amount,
+                    method: method.charAt(0).toUpperCase() + method.slice(1) + ' (Pending)',
+                    status: 'Pending'
+                });
+                localStorage.setItem('workbridge_pending_donations', JSON.stringify(pendingDonations));
+
+                // Get WhatsApp number from settings
+                const settings = JSON.parse(localStorage.getItem('workbridge_settings') || '{}');
+                const whatsapp = settings.whatsapp || '923012233445';
+
+                const message = `JazakAllah! I have donated to the cause: *${cause}* (Event Widget).\n\n*Donation Details:*\n- Amount: Rs. ${amount}\n- Donor: ${donorName}\n- Method: ${method}\n\nI am sending the payment proof. Please confirm receipt.`;
+
+                const waUrl = `https://wa.me/${whatsapp}?text=${encodeURIComponent(message)}`;
+                window.open(waUrl, '_blank');
+
+                alert('JazakAllah! Redirecting to WhatsApp to send payment proof... 🌟');
                 donationModal.style.display = 'none';
                 form.reset();
             };

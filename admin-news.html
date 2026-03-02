@@ -44,6 +44,39 @@
             background: #f1f5f9;
         }
 
+        .news-item-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-item-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .news-item-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .btn-delete-small {
+            color: #94a3b8;
+            padding: 5px;
+            transition: var(--transition);
+            border-radius: 4px;
+        }
+
+        .btn-delete-small:hover {
+            color: #ef4444;
+            background: #fee2e2;
+        }
+
         .news-item-row.active {
             background: #eff6ff;
             border-left: 4px solid var(--primary-color);
@@ -229,8 +262,13 @@
 
             container.innerHTML = currentNews.map(item => `
                 <div class="news-item-row ${item.id === activeId ? 'active' : ''}" onclick="selectItem('${item.id}')">
-                    <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem;">${item.title}</div>
-                    <div style="font-size: 0.8rem; color: var(--text-secondary);">${item.date} | ${item.category}</div>
+                    <div class="news-item-content">
+                        <div class="news-item-title">${item.title}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-secondary);">${item.date} | ${item.category}</div>
+                    </div>
+                    <button class="btn-delete-small" onclick="event.stopPropagation(); deleteItem('${item.id}')">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
                 </div>
             `).join('');
         }
@@ -268,18 +306,25 @@
             selectItem(newId);
         }
 
-        function deleteItem() {
+        function deleteItem(id = null) {
+            const targetId = id || activeId;
+            if (!targetId) return;
+
             if (!confirm('Are you sure you want to delete this article?')) return;
-            currentNews = currentNews.filter(n => n.id !== activeId);
+            currentNews = currentNews.filter(n => n.id !== targetId);
             localStorage.setItem('workbridge_news', JSON.stringify(currentNews));
 
             if (currentNews.length > 0) {
-                selectItem(currentNews[0].id);
+                if (targetId === activeId) {
+                    selectItem(currentNews[0].id);
+                } else {
+                    renderList();
+                }
             } else {
                 activeId = null;
                 document.getElementById('news-form').reset();
+                renderList();
             }
-            renderList();
         }
 
         document.getElementById('news-form').onsubmit = (e) => {
